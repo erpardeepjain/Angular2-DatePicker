@@ -1,0 +1,31 @@
+<div class="mydp" [ngStyle]="{'height': height, 'width': width, 'border-style': border}">
+    <div class="selectiongroup" *ngIf="showTextBox">
+        <span class="selection" [ngStyle]="{'height': height, 'line-height': height}" (click)="openBtnClicked()">{{selectionDayTxt}}</span>
+        <span class="selbtngroup" [style.height]="height">
+        <button type="button" class="btnpicker" (click)="openBtnClicked()"><span class="icon icon-calendar"></span></button>
+        </span>
+    </div>
+    <div class="row" *ngIf="showSelector">
+        <div class="col-md-12" style="z-index:1000">
+            <div class="calendar" [ngStyle]="{'background-color': background}">
+                <div class="years clearfix">
+                    <div class="unit prev" (click)="prevMonth()"><em></em></div>
+                    <div class="monyear">{{visibleMonth.monthTxt}} {{visibleMonth.year}}</div>
+                    <div class="unit next" (click)="nextMonth()"><em></em></div>
+                </div>
+                <div class="days">
+                    <div class="clearfix">
+                        <div class="unit" *ngFor="#days of weekDays">{{days}}</div>
+                    </div>
+                    <div class="clearfix">
+                        <div *ngFor="#w of dates">
+                            <div *ngFor="#d of w" (click)="cellClicked(d)" [ngClass]="{'unit active': selectedDate.day===d.day && selectedDate.month===d.month && selectedDate.year===d.year && d.cmo===CURR_MONTH || d.currDay }">
+                                <div style="background-color:inherit" [ngClass]="{'unit older': d.cmo===PREV_MONTH || d.cmo===NEXT_MONTH, 'unit': d.cmo===CURR_MONTH || d.cmo!==CURR_MONTH}"><b>{{d.day}}</b></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

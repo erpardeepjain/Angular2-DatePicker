@@ -1,0 +1,34 @@
+<html>
+<head>
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    
+    <title>BootFlatt Datepicker</title>
+    <base href="/"></base>
+</head>
+
+<body>
+    <app>Loading....</app>
+</body>
+
+<script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
+<script src="node_modules/es6-shim/es6-shim.min.js"></script>
+<script src="node_modules/systemjs/dist/system.src.js"></script>
+<script>
+    System.config({
+                defaultJSExtensions: true,
+                 map: {
+                    rxjs: 'node_modules/rxjs'
+                },
+                packages: {
+                    rxjs: {
+                    defaultExtension: 'js'
+                }
+                }
+            });
+</script>
+<script src="node_modules/angular2/bundles/angular2.dev.js"></script>
+<script src="node_modules/rxjs/bundles/Rx.js"></script>
+<script>
+    System.import('dist/app');
+</script>
+</html>

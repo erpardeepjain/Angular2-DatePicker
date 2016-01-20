@@ -1,0 +1,36 @@
+{
+  "name": "BootFlatDatePicker",
+  "version": "1.0.0",
+  "description": "Stylish DatePicker using Bootflat for Angular2",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/inspirebrio/connectify.git"
+  },
+  "author": "PardeepJain",
+  "license": "ISC",
+  "dependencies": {
+    "angular2": "2.0.0-beta.0",
+    "systemjs": "0.19.6",
+    "es6-promise": "^3.0.2",
+    "es6-shim": "^0.33.13",
+    "reflect-metadata": "0.1.2",
+    "rxjs": "5.0.0-beta.0",
+    "zone.js": "0.5.10",
+    "browser-sync": "^2.9.3", 
+    "gulp": "^3.9.0",
+    "gulp-install": "^0.6.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-tslint": "^3.6.0",    
+    "gulp-typescript": "^2.9.2",
+    "jquery": "^2.1.4",
+    "require-dir": "^0.3.0",
+    "superstatic": "^3.0.0"
+},
+   "devDependencies": {
+    "typescript": "^1.7.3"
+  }
+}
