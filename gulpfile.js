@@ -37,18 +37,16 @@ gulp.task('serve', ['ts-lint', 'compile-ts'], function () {
 	gulp.watch([config.allcompoTs], ['ts-lint', 'compile-ts']);
 	
 	browserSync({
-		port: 8080,
+		port: 8081,
 		files: [
 			config.index, 
 			'src/*.html', 
 			'src/*.css', 
 			'./dist/*.js', 
-			'src/components/**/**/*.html', 
+			'src/**/**/*.html', 
 			'dist/**/**/*.js', 
 			'dist/**/*.js', 
-			'src/ui-components/**/*.html',
-			'src/ui-components/**/*.css',
-			'src/components/**/**/*.css'
+			'src/**/**/*.css'
 			],
 		injectChanges: true,
 		logFileChanges: false,
