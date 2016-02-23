@@ -1,33 +1,28 @@
-import {Component, OnInit} from 'angular2/core';
+import {Component, OnInit, provide} from 'angular2/core';
+import {CORE_DIRECTIVES} from 'angular2/common'
+import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS, LocationStrategy, HashLocationStrategy} from 'angular2/router';
+
 import {bootstrap} from 'angular2/platform/browser';
-import {BootFlatDatePicker} from './DatePicker/bootflat-datepicker';
+
+import {Datepicker} from './components/Datepicker/Datepicker'
+import {Components} from './components/components'
+import {Breadcrumb} from './breadcrumb/breadcrumb';
+import {Tab} from './tab/tab';
 
 @Component({
     selector: 'app',
     templateUrl: 'src/app.html',
-    directives: [BootFlatDatePicker]
+    directives: [CORE_DIRECTIVES, ROUTER_DIRECTIVES, Breadcrumb, Tab]
 })
+
+@RouteConfig([
+        // Components Routes //
+    { path: '/components', component: Components, name: "Components" },
+    { path: '/Datepicker', component: Datepicker, name: "Datepicker" }
+])
 
 class app implements OnInit {
 
-    // Date Picker //
-    private myDatePickerOptions = {
-        todayBtnTxt: 'Today',
-        dateFormat: 'yyyy-mm-dd',
-        firstDayOfWeek: 'mo',
-        sunHighlight: true,
-        height: '34px',
-        width: '300px',
-        
-        background: "#3BAFDA",
-        showTextBox: false,
-    };
-    selectedDate: string = '';
-
-    onDateChanged1(event) {
-        console.log('onDateChanged1(): ', event.date, ' - formatted: ', event.formatted, ' - epoc timestamp: ', event.epoc);
-        this.selectedDatea = event.formatted;
-    }
-    // Date Picker //
-}
-bootstrap(app);
+    tabTitle: string = 'Date Picker';
+ }
+bootstrap(app,[ROUTER_PROVIDERS, provide(LocationStrategy,{useClass:HashLocationStrategy})]);

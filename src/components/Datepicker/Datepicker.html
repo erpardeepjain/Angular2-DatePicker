@@ -1,0 +1,17 @@
+<br>
+<div class="container-fluid">
+
+	<breadcrumb>
+		<tab name="Home" icon="glyphicon glyphicon-home"></tab>
+		<a [routerLink]="['/Components']">
+			<tab name="Cutom Angular 2 Components" icon="glyphicon glyphicon-home"></tab>
+		</a>
+		<tab action="active" name="Datepicker" icon="glyphicon glyphicon-list-alt"></tab>
+	</breadcrumb>
+
+	<div class="row">
+		<div class="col-md-12">
+			<bootflat-date-picker [options]="myDatePickerOptions" (dateChanged)="onDateChanged1($event)" [selDate]="selectedDate"></bootflat-date-picker>
+		</div>
+	</div>
+</div>
