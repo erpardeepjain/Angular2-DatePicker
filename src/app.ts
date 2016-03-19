@@ -16,13 +16,13 @@ import {Tab} from './tab/tab';
 })
 
 @RouteConfig([
-        // Components Routes //
+    // Components Routes //
     { path: '/components', component: Components, name: "Components" },
     { path: '/Datepicker', component: Datepicker, name: "Datepicker" }
 ])
 
-class app implements OnInit {
+class App implements OnInit {
 
     tabTitle: string = 'Date Picker';
- }
-bootstrap(app,[ROUTER_PROVIDERS, provide(LocationStrategy,{useClass:HashLocationStrategy})]);
+}
+bootstrap(App, [ROUTER_PROVIDERS, provide(LocationStrategy, { useClass: HashLocationStrategy })]);

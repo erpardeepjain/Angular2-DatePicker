@@ -14,7 +14,8 @@ import {Tab} from '../../tab/tab';
 
 export class Datepicker {
 	tabTitle: string = 'Date Picker';
-
+    newSelectedDate:any;
+    
 	constructor() {
 		console.log('components called');
 	}
@@ -34,7 +35,7 @@ export class Datepicker {
 
     onDateChanged1(event) {
         console.log('onDateChanged1(): ', event.date, ' - formatted: ', event.formatted, ' - epoc timestamp: ', event.epoc);
-        this.selectedDatea = event.formatted;
+        this.newSelectedDate = event.formatted;
     }
     // Date Picker //
 

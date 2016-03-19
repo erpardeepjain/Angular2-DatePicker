@@ -205,7 +205,7 @@ export class BootFlatDatePicker implements OnInit, OnChanges {
 
     preZero(val:string):string {
         // Prepend zero if smaller than 10
-        return val < 10 ? '0' + val : val;
+        return val < '10' ? '0' + val : val;
     }
 
     formatDate(val:any):string {
