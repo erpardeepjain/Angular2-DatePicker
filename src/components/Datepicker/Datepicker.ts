@@ -3,13 +3,16 @@ import {CORE_DIRECTIVES} from 'angular2/common';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
 
 import {BootFlatDatePicker} from '../../DatePicker/bootflat-datepicker';
+
+import {DatepickerResponsive} from '../../Responsive-Datepicker-2/Responsive-Datepicker';
+
 import {Breadcrumb} from '../../breadcrumb/breadcrumb';
 import {Tab} from '../../tab/tab';
 
 @Component({
 	selector: 'datepicker',
 	templateUrl: 'src/components/Datepicker/Datepicker.html',
-	directives: [CORE_DIRECTIVES, ROUTER_DIRECTIVES, BootFlatDatePicker, Tab, Breadcrumb]
+	directives: [CORE_DIRECTIVES, ROUTER_DIRECTIVES, BootFlatDatePicker,DatepickerResponsive, Tab, Breadcrumb]
 })
 
 export class Datepicker {
