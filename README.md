@@ -19,6 +19,10 @@ Simple Angular2 date picker using Bootflat Theme. Uses version "2.0.0-beta.0" of
 1. Mozila FireFox(latest)
 2. Google Chrome (latest)
 
+# Live Demo
+ 
+ Check Here for live demo http://plnkr.co/edit/B3oZhApTuaaB12wJIX3q
+
 #Author
 
 Pardeep Jain
