@@ -4,8 +4,9 @@
 
 # Description
 
-Simple Angular2 date picker using Bootflat Theme. Uses version "2.0.0-beta.0" of Angular2. Demo is here...
+Simple Angular2 date picker using Bootflat Theme. Uses version "2.0.0-beta" of Angular2. Here is Demo using two different Themes
 
+<img src="http://imgur.com/dDT8zo2.png">
 <img src="http://i.stack.imgur.com/0AHZr.png">
 
 # Getting Started
@@ -21,7 +22,10 @@ Simple Angular2 date picker using Bootflat Theme. Uses version "2.0.0-beta.0" of
 
 # Live Demo
  
- Check Here for live demo http://plnkr.co/edit/B3oZhApTuaaB12wJIX3q
+ Check Here for live demo 
+ <a href="http://plnkr.co/edit/B3oZhApTuaaB12wJIX3q">Calendar Using BootFlat Theme</a>
+ 
+ <a href="http://plnkr.co/edit/DfS1MMdsGmwS60nxFLFL?p=preview">Responsive Calendar For angular2</a>
 
 #Author
 
