@@ -3,7 +3,7 @@ import {CORE_DIRECTIVES} from 'angular2/common';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
 
 import {BootFlatDatePicker} from '../../DatePicker/bootflat-datepicker';
-
+ 
 import {DatepickerResponsive} from '../../Responsive-Datepicker-2/Responsive-Datepicker';
 
 import {Breadcrumb} from '../../breadcrumb/breadcrumb';
