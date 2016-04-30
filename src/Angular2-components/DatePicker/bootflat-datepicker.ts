@@ -4,8 +4,8 @@ import {MyDate, MyMonth} from './bootflat-datepicker-interface';
 
 @Component({
     selector: 'bootflat-date-picker',
-    templateUrl: 'src/DatePicker/bootflat-datepicker.html',
-    styleUrls: ['src/DatePicker/bootflat-datepicker.css'],
+    templateUrl: 'src/Angular2-components/DatePicker/bootflat-datepicker.html',
+    styleUrls: ['src/Angular2-components/DatePicker/bootflat-datepicker.css'],
     directives: [NgIf, NgFor, NgClass, NgStyle]
 })
 

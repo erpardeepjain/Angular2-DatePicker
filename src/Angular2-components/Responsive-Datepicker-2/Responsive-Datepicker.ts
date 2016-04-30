@@ -4,12 +4,13 @@ import {MyDate, MyMonth} from './Responsive-Datepicker-interface';
 
 @Component({
     selector: 'responsive-date-picker',
-    templateUrl: 'src/Responsive-Datepicker-2/Responsive-Datepicker.html',
-    styleUrls: ['src/Responsive-Datepicker-2/Responsive-Datepicker.css'],
+    templateUrl: 'src/Angular2-components/Responsive-Datepicker-2/Responsive-Datepicker.html',
+    styleUrls: ['src/Angular2-components/Responsive-Datepicker-2/Responsive-Datepicker.css'],
     directives: [NgIf, NgFor, NgClass, NgStyle]
 })
 
 export class DatepickerResponsive implements OnInit, OnChanges {
+    @Output() DateSelected:EventEmitter<Object> = new EventEmitter();
     showSelector:boolean = false;
     visibleMonth:MyMonth = {monthTxt: '', monthNbr: 0, year: 0};
     selectedDate:MyDate = {year: 0, month: 0, day: 0};
@@ -79,19 +80,6 @@ export class DatepickerResponsive implements OnInit, OnChanges {
                 year: parseInt(this.selectionDayTxt.substring(ypos, ypos + 4))};
         }
     }
-    // Function for get Events List API //
-    API_getEvent() {
-		let url_newEvent = this.base_path_service.base_path_event() + 'event/?year='+this.visibleMonth.year+'&month='+this.visibleMonth.monthNbr;
-		this.base_path_service.GetRequest(url_newEvent)
-			.subscribe(res=> {
-                this.EventsBooked = res[0].json;
-                this.createEventCalendar();
-			},
-			err=> {
-				console.log(err);
-			})
-	}
-    // Function for get Events List API //
     
     openBtnClicked():void {
         this.showSelector = !this.showSelector;
@@ -125,7 +113,6 @@ export class DatepickerResponsive implements OnInit, OnChanges {
         }
         this.visibleMonth = {monthTxt: this.monthText(m), monthNbr: m, year: y};
         this.createMonth(m, y);
-        this.API_getEvent();
     }
 
     nextMonth():void {
@@ -140,7 +127,6 @@ export class DatepickerResponsive implements OnInit, OnChanges {
         }
         this.visibleMonth = {monthTxt: this.monthText(m), monthNbr: m, year: y};
         this.createMonth(m, y);
-        this.API_getEvent();
     }
 
     cellClicked(cell:any):void {
@@ -168,6 +154,7 @@ export class DatepickerResponsive implements OnInit, OnChanges {
         // Custom Editing Pardeep
         
         let epoc = new Date(date.year, date.month - 1, date.day, 0, 0, 0, 0).getTime() / 1000.0;
+        this.DateSelected.emit({date: this.selectedDate, formatted: this.selectionDayTxt, epoc: epoc});
     }
 
     preZero(val:string):string {

@@ -1,0 +1,10 @@
+<div class="row example-pagination" *ngIf='totalPage > 1'>
+	<div class="col-md-offset-3 col-sm-12 col-md-6 text-center">
+		<ul class="pagination">
+			<li [ngClass]="{disabled: page==1}" class="active"><a (click)="PrevPageFun(totalPage)">Prev</a></li>
+			<li *ngFor="#pageNumber of pagination_array #i=index" [ngClass]="{disabled: page===pageNumber}"><a (click)="pagination(pageNumber)">{{pageNumber}}</a></li>
+			<li><a (click)="lastPage(totalPage)">{{totalPage}}</a></li>
+			<li [ngClass]="{disabled: page===totalPage}" class="active"><a (click)="nextPageFun(totalPage)">Next</a></li>
+		</ul>
+	</div>
+</div>

@@ -5,11 +5,9 @@ import {Tab} from '../tab/tab'
 
 @Component({
 	selector: 'breadcrumb',
-	templateUrl: 'src/breadcrumb/breadcrumb.html',
-	directives: [Tab,CORE_DIRECTIVES]
+	templateUrl: 'src/Angular2-components/breadcrumb/breadcrumb.html',
+	directives: [Tab, CORE_DIRECTIVES]
 })
-export class Breadcrumb{
-	constructor(){
-		console.log("Breadcrumb called");
-		 }
+export class Breadcrumb {
+	constructor() { }
 }

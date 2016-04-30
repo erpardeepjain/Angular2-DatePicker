@@ -93,6 +93,7 @@
 }
 .Event-calendar .days .unit b {
   color:white;
+  cursor: pointer;
   font-weight: normal;
   padding:6% 20%;
   border: 2px solid white;

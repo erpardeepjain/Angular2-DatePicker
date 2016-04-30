@@ -1,0 +1,40 @@
+<style>
+	.customBtn {
+		background: #e2e2e2;
+	}
+	
+	.customBtn .glyphicon-trash {
+		color: red;
+	}
+</style>
+<div class="modal fade" id="delete_category{{pk}}" role="dialog">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header modal_header_color">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">Delete</h4>
+			</div>
+			<div class="modal-body">
+				<div class="row margin_both">
+					<div class="col-md-12">
+						<div class="row form-group text-center">
+							<span>Are you sure you want to Delete !</span>
+						</div>
+						<div class="row form-group">
+							<div class="text-center">
+								<button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+								<button type="button" class="btn btn-danger" (click)='DeleteFunction()' data-dismiss="modal">Delete</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<button class="btn customBtn" data-toggle="modal" attr.data-target="#delete_category{{pk}}" *ngIf='!lg'>
+	<span class="glyphicon glyphicon-trash"></span>
+</button>
+
+<!--<button class="btn btn-primary btn-lg hidden-xs" *ngIf='lg' data-toggle="modal" attr.data-target="#delete_category{{pk}}">Delete</button>-->
