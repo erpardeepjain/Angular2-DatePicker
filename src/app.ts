@@ -10,6 +10,7 @@ import {BootFlatDatePicker} from './Angular2-components/DatePicker/bootflat-date
 import {DatepickerResponsive} from './Angular2-components/Responsive-Datepicker-2/Responsive-Datepicker';
 import {Pagination} from './Angular2-components/pagination/pagination';
 import {Delete} from './Angular2-components/Delete/delete-modal';
+import {Angular2Component} from './angular2-component';
 
 @Component({
     selector: 'app',
@@ -18,6 +19,9 @@ import {Delete} from './Angular2-components/Delete/delete-modal';
     directives: [CORE_DIRECTIVES, ROUTER_DIRECTIVES, Breadcrumb, Tab, BootFlatDatePicker, DatepickerResponsive, Pagination, Delete]
 })
 
+@RouteConfig([
+    { path: '/Angular2Component', component: Angular2Component, name: 'Angular2' }
+])
 class App {
     numberList: Array<number> = [1, 2, 3, 4, 5];
     BootflatDatePicker: boolean = false;

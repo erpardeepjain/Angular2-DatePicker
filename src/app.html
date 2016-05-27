@@ -2,7 +2,11 @@
 <div class="container-fluid">
 	<breadcrumb>
 		<tab name="Home" icon="glyphicon glyphicon-home"></tab>
-		<tab action="active" name="Angular 2 Components" icon="glyphicon glyphicon-home"></tab>
+		<tab [routerLink]='["/Angular2"]' name="Angular 2 Components" icon="glyphicon glyphicon-home"></tab>
+		<tab action="active" *ngIf='BootflatDatePicker' name="Bootflat Date Picker" icon="glyphicon glyphicon-home"></tab>
+		<tab action="active" *ngIf='ResponsiveDatePicker' name="Responsive Date Picker" icon="glyphicon glyphicon-home"></tab>
+		<tab action="active" *ngIf='Pagination' name="Pagination" icon="glyphicon glyphicon-home"></tab>
+		<tab action="active" *ngIf='Delete' name="Delete Modal" icon="glyphicon glyphicon-home"></tab>
 	</breadcrumb>
 
 	<ul class="menu">
@@ -12,6 +16,8 @@
 		<li (click)='DeleteFun()'> Delete Modal </li>
 	</ul>
 	<hr class="header_hr">
+
+	<router-outlet></router-outlet>
 
 	<!--Angular2 Componenets Calling Area-->
 	<div class="row" *ngIf='BootflatDatePicker'>
