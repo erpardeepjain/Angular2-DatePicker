@@ -1,13 +1,10 @@
-import {Component} from 'angular2/core';
-import {CORE_DIRECTIVES} from 'angular2/common';
+import {Component} from '@angular/core';
 
 import {Tab} from '../tab/tab'
 
 @Component({
 	selector: 'breadcrumb',
 	templateUrl: 'src/Angular2-components/breadcrumb/breadcrumb.html',
-	directives: [Tab, CORE_DIRECTIVES]
+	directives: [Tab]
 })
-export class Breadcrumb {
-	constructor() { }
-}
+export class Breadcrumb { }

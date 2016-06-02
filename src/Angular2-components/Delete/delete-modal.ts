@@ -1,20 +1,25 @@
-import {Component, OnInit, Output, EventEmitter, Input} from 'angular2/core';
+import {Component, OnInit, Output, EventEmitter, Input} from '@angular/core';
 
 @Component({
   selector: 'delete',
-  inputs: ['pk', 'lg'],
+  inputs: ['lg'],
   templateUrl: 'src/Angular2-components/Delete/delete-modal.html',
   styleUrls: ['src/app.css']
 })
 export class Delete implements OnInit {
   @Output() deleteFun = new EventEmitter();
-  @Input() pk: any;
   @Input() lg: boolean = false;
+  @Input() BName: string = null;
+  @Input() disable: boolean = false;
+
+  private static cmpId = 0;
+  private IDD: number;
 
   constructor() { }
 
   ngOnInit() {
-    // console.log('Delete called', this.pk);
+    this.IDD = ++Delete.cmpId;
+    // console.log('Delete called', this.pk, Delete.cmpId, this.IDD);
   }
 
   DeleteFunction() {

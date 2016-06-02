@@ -15,11 +15,11 @@
                 </div>
                 <div class="days">
                     <div class="clearfix">
-                        <div class="unit" *ngFor="#days of weekDays">{{days}}</div>
+                        <div class="unit" *ngFor="let days of weekDays">{{days}}</div>
                     </div>
                     <div class="clearfix">
-                        <div *ngFor="#w of dates">
-                            <div *ngFor="#d of w" (click)="cellClicked(d)" [ngClass]="{'unit active': selectedDate.day===d.day && selectedDate.month===d.month && selectedDate.year===d.year && d.cmo===CURR_MONTH || d.currDay }">
+                        <div *ngFor="let w of dates">
+                            <div *ngFor="let d of w" (click)="cellClicked(d)" [ngClass]="{'unit active': selectedDate.day===d.day && selectedDate.month===d.month && selectedDate.year===d.year && d.cmo===CURR_MONTH || d.currDay }">
                                 <div style="background-color:inherit" [ngClass]="{'unit older': d.cmo===PREV_MONTH || d.cmo===NEXT_MONTH, 'unit': d.cmo===CURR_MONTH || d.cmo!==CURR_MONTH}"><b>{{d.day}}</b></div>
                             </div>
                         </div>

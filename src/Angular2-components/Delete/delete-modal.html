@@ -7,7 +7,7 @@
 		color: red;
 	}
 </style>
-<div class="modal fade" id="delete_category{{pk}}" role="dialog">
+<div class="modal fade" id="delete_category{{IDD}}" role="dialog">
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header modal_header_color">
@@ -33,8 +33,8 @@
 	</div>
 </div>
 
-<button class="btn customBtn" data-toggle="modal" attr.data-target="#delete_category{{pk}}" *ngIf='!lg'>
+<button class="btn customBtn" data-toggle="modal" attr.data-target="#delete_category{{IDD}}" *ngIf='!lg' [disabled]='disable'>
 	<span class="glyphicon glyphicon-trash"></span>
 </button>
 
-<!--<button class="btn btn-primary btn-lg hidden-xs" *ngIf='lg' data-toggle="modal" attr.data-target="#delete_category{{pk}}">Delete</button>-->
+<button *ngIf='lg' class="hidden-xs" data-toggle="modal" attr.data-target="#delete_category{{IDD}}"> {{BName ? BName : 'Delete'}}</button>

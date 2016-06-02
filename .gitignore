@@ -1,3 +1,8 @@
 node_modules/
 src/app/*.js
-src/app/*.js.map
+.maplogs/*
+!.gitkeep
+bower_components/
+tmp
+.DS_Store
+.idea

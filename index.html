@@ -5,38 +5,35 @@
     <link rel="stylesheet" href="node_modules/bootflat/bootflat/css/bootflat.css">
     <script src="node_modules/jquery/dist/jquery.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
-
+    <link rel="stylesheet" href="src/lib/loader/loader.css">
     <title>BootFlatt Datepicker</title>
     <base href="/"></base>
 </head>
 
 <body>
-    <app>Loading....</app>
+    <app>
+        <div class='container'>
+            <div class='loader'>
+                <div class='loader--dot'></div>
+                <div class='loader--dot'></div>
+                <div class='loader--dot'></div>
+                <div class='loader--dot'></div>
+                <div class='loader--dot'></div>
+                <div class='loader--dot'></div>
+                <div class='loader--text'></div>
+            </div>
+        </div>
+    </app>
 </body>
 
-<script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
+<base href="/"></base>
 <script src="node_modules/es6-shim/es6-shim.min.js"></script>
+<script src="node_modules/zone.js/dist/zone.js"></script>
+<script src="node_modules/reflect-metadata/Reflect.js"></script>
 <script src="node_modules/systemjs/dist/system.src.js"></script>
+<script src="systemjs.config.js"></script>
 <script>
-    System.config({
-                defaultJSExtensions: true,
-                 map: {
-                    rxjs: 'node_modules/rxjs'
-                },
-                packages: {
-                    rxjs: {
-                    defaultExtension: 'js'
-                }
-                }
-            });
-
-</script>
-
-<script src="node_modules/angular2/bundles/angular2.dev.js"></script>
-<script src="node_modules/angular2/bundles/router.dev.js"></script>
-<script src="node_modules/rxjs/bundles/Rx.js"></script>
-<script>
-    System.import('dist/app');
+    System.import('app').catch(function(err){ console.error(err);  });
 
 </script>
 

@@ -40,9 +40,9 @@
 
 	<div class="row" *ngIf='Delete'>
 		<div class="col-sm-12 col-md-6 text-center">
-			<a *ngFor='#Number of numberList'>
+			<a *ngFor='let Number of numberList'>
 				{{Number}} &nbsp; &nbsp; Click Button To Delete &nbsp; 
-				<delete (deleteFun)="DeleteElement(Number)" [pk]='Number'></delete><br>
+				<delete (deleteFun)="DeleteElement(Number)"></delete><br>
 			</a>
 		</div>
 	</div>

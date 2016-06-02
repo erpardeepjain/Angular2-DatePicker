@@ -1,8 +1,5 @@
-import {Component, OnInit, provide} from 'angular2/core';
-import {CORE_DIRECTIVES} from 'angular2/common'
-import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS, LocationStrategy, HashLocationStrategy} from 'angular2/router';
-
-import {bootstrap} from 'angular2/platform/browser';
+import {Component, OnInit, provide} from '@angular/core';
+import {RouteConfig} from '@angular/router-deprecated';
 
 import {Breadcrumb} from './Angular2-components/breadcrumb/breadcrumb';
 import {Tab} from './Angular2-components/tab/tab';
@@ -16,13 +13,13 @@ import {Angular2Component} from './angular2-component';
     selector: 'app',
     templateUrl: 'src/app.html',
     styleUrls: ['src/app.css'],
-    directives: [CORE_DIRECTIVES, ROUTER_DIRECTIVES, Breadcrumb, Tab, BootFlatDatePicker, DatepickerResponsive, Pagination, Delete]
+    directives: [Breadcrumb, Tab, BootFlatDatePicker, DatepickerResponsive, Pagination, Delete]
 })
 
 @RouteConfig([
     { path: '/Angular2Component', component: Angular2Component, name: 'Angular2' }
 ])
-class App {
+export class AppComponent {
     numberList: Array<number> = [1, 2, 3, 4, 5];
     BootflatDatePicker: boolean = false;
     ResponsiveDatePicker: boolean = true;
@@ -31,6 +28,9 @@ class App {
 
     newSelectedDate: string = null;
 
+    constructor() {
+        console.log("Called Angular2 RC.0");
+    }
     BootflatDatepickerFun() {
         this.BootflatDatePicker = true;
         this.ResponsiveDatePicker = false;
@@ -87,5 +87,3 @@ class App {
     }
     // Date Picker //
 }
-
-bootstrap(App, [ROUTER_PROVIDERS, provide(LocationStrategy, { useClass: HashLocationStrategy })]);

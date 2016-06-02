@@ -1,4 +1,4 @@
-# Angular2-Bootflat-DatePicker
+# Angular2-Bootflat-DatePicker (RC.1)
 
 ---DatePicker of Angular2 using Bootflat Theme---
 

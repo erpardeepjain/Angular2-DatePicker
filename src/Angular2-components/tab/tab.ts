@@ -1,12 +1,10 @@
-import {Component, Attribute, Input} from 'angular2/core';
-import {NgClass, CORE_DIRECTIVES} from 'angular2/common';
+import {Component, Attribute, Input} from '@angular/core';
 
 @Component({
 	selector: 'tab',
 	inputs: ['name,icon,action', 'color'],
 	templateUrl: 'src/Angular2-components/tab/tab.html',
-	styleUrls: ['src/Angular2-components/tab/tab.css'],
-	directives: [NgClass, CORE_DIRECTIVES]
+	styleUrls: ['src/Angular2-components/tab/tab.css']
 })
 
 export class Tab {
