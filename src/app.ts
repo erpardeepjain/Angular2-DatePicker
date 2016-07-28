@@ -9,6 +9,8 @@ import {Pagination} from './Angular2-components/pagination/pagination';
 import {Delete} from './Angular2-components/Delete/delete-modal';
 import {Angular2Component} from './angular2-component';
 
+import {GlobalService} from './GlobalService';
+
 @Component({
     selector: 'app',
     templateUrl: 'src/app.html',
@@ -28,8 +30,9 @@ export class AppComponent {
 
     newSelectedDate: string = null;
 
-    constructor() {
+    constructor(private base_path_service: GlobalService) {
         console.log("Called Angular2 RC.0");
+        this.API_getRequest();
     }
     BootflatDatepickerFun() {
         this.BootflatDatePicker = true;
@@ -86,4 +89,17 @@ export class AppComponent {
         this.newSelectedDate = event.formatted;
     }
     // Date Picker //
+    
+    // Get Request
+    API_getRequest() {
+        let url_newEvent = ' http://jsonplaceholder.typicode.com/posts';
+        this.base_path_service.GetRequest(url_newEvent)
+            .subscribe(res=> {
+                console.log(res);
+            },
+            err=> {
+                console.log(err);
+            })
+    }
+    // Get Request
 }
