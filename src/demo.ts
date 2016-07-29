@@ -10,23 +10,17 @@ import {Delete} from './Angular2-components/Delete/delete-modal';
 
 import { Angular2Component } from './portfolio/angular2-component';
 import { FormComponent } from './http/form-component';
-import { DemoComponent } from './demo';
 
 import {GlobalService} from './GlobalService';
 
 @Component({
-    selector: 'app',
-    templateUrl: 'src/app.html',
+    selector: 'demo',
+    templateUrl: 'src/demo.html',
     styleUrls: ['src/app.css'],
     directives: [Breadcrumb, Tab, BootFlatDatePicker, DatepickerResponsive, Pagination, Delete]
 })
 
-@RouteConfig([
-    { path: '/Angular2Component', component: Angular2Component, name: 'Portfolio' },
-    { path: '/form-component', component: FormComponent, name: 'Form' },
-    { path: '/demo-component', component: DemoComponent, name: 'Demo' }
-])
-export class AppComponent {
+export class DemoComponent {
     numberList: Array<number> = [1, 2, 3, 4, 5];
     BootflatDatePicker: boolean = false;
     ResponsiveDatePicker: boolean = true;

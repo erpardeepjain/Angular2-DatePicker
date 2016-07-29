@@ -1,0 +1,42 @@
+<br>
+<div class="container-fluid">
+
+	<ul class="menu">
+		<li (click)='BootflatDatepickerFun()'>Bootflat Date Picker</li>
+		<li (click)='ResponsiveDatepickerFun()'>Responsive Date Picker</li>
+		<li (click)='paginationFun()'> Pagination </li>
+		<li (click)='DeleteFun()'> Delete Modal </li>
+	</ul>
+	<hr class="header_hr">
+
+	<br>
+
+	<!--Angular2 Componenets Calling Area-->
+	<div class="row" *ngIf='BootflatDatePicker'>
+		<div class="col-md-12 text-center">
+			<bootflat-date-picker [options]="myDatePickerOptions" (dateChanged)="onDateChanged1($event)" [selDate]="selectedDate"></bootflat-date-picker>
+		</div>
+	</div>
+
+	<div class="row" *ngIf='ResponsiveDatePicker'>
+		<div class="col-sm-12 col-md-offset-3 col-md-6">
+			<responsive-date-picker (DateSelected)="onDateChanged1($event)"> </responsive-date-picker>
+		</div>
+	</div>
+
+	<div class="row" *ngIf='Pagination'>
+		<div class="col-sm-12 col-md-6">
+			<pagination totalPage=10 (nextPage)='nextPage($event)'></pagination>
+		</div>
+	</div>
+
+	<div class="row" *ngIf='Delete'>
+		<div class="col-sm-12 col-md-6 text-center">
+			<a *ngFor='let Number of numberList'>
+				{{Number}} &nbsp; &nbsp; Click Button To Delete &nbsp; 
+				<delete (deleteFun)="DeleteElement(Number)"></delete><br>
+			</a>
+		</div>
+	</div>
+	<!--Angular2 Componenets Calling Area-->
+</div>
