@@ -16,7 +16,8 @@ var bootflat_datepicker_1 = require('./Angular2-components/DatePicker/bootflat-d
 var Responsive_Datepicker_1 = require('./Angular2-components/Responsive-Datepicker-2/Responsive-Datepicker');
 var pagination_1 = require('./Angular2-components/pagination/pagination');
 var delete_modal_1 = require('./Angular2-components/Delete/delete-modal');
-var angular2_component_1 = require('./angular2-component');
+var angular2_component_1 = require('./portfolio/angular2-component');
+var form_component_1 = require('./http/form-component');
 var GlobalService_1 = require('./GlobalService');
 var AppComponent = (function () {
     function AppComponent(base_path_service) {
@@ -38,8 +39,7 @@ var AppComponent = (function () {
             showTextBox: false,
         };
         this.selectedDate = '';
-        console.log("Called Angular2 RC.0");
-        this.API_getRequest();
+        console.log("Called Angular2 RC.1");
     }
     AppComponent.prototype.BootflatDatepickerFun = function () {
         this.BootflatDatePicker = true;
@@ -77,15 +77,6 @@ var AppComponent = (function () {
         console.log('onDateChanged1(): ', event.date, ' - formatted: ', event.formatted, ' - epoc timestamp: ', event.epoc);
         this.newSelectedDate = event.formatted;
     };
-    AppComponent.prototype.API_getRequest = function () {
-        var url_newEvent = ' http://jsonplaceholder.typicode.com/posts';
-        this.base_path_service.GetRequest(url_newEvent)
-            .subscribe(function (res) {
-            console.log(res);
-        }, function (err) {
-            console.log(err);
-        });
-    };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'app',
@@ -94,7 +85,8 @@ var AppComponent = (function () {
             directives: [breadcrumb_1.Breadcrumb, tab_1.Tab, bootflat_datepicker_1.BootFlatDatePicker, Responsive_Datepicker_1.DatepickerResponsive, pagination_1.Pagination, delete_modal_1.Delete]
         }),
         router_deprecated_1.RouteConfig([
-            { path: '/Angular2Component', component: angular2_component_1.Angular2Component, name: 'Angular2' }
+            { path: '/Angular2Component', component: angular2_component_1.Angular2Component, name: 'Angular2' },
+            { path: '/form-component', component: form_component_1.FormComponent, name: 'Form' }
         ]), 
         __metadata('design:paramtypes', [GlobalService_1.GlobalService])
     ], AppComponent);
